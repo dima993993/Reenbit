@@ -8,6 +8,7 @@ type Props = {
 };
 const WrapperAside = styled.div`
   border-right: 1px solid var(--color-border);
+  overflow-y: scroll;
 `;
 
 export const Aside = ({ users }: Props) => {

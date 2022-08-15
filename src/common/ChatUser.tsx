@@ -14,10 +14,10 @@ export const ChatUser = ({ id, name, message, url }: Iusers) => {
         </div>
         <div>
           <div>{name}</div>
-          <div>1234</div>
+          <div>{message[message.length - 1].message}</div>
         </div>
       </div>
-      <div>Date</div>
+      <div>{message[message.length - 1].date}</div>
     </User>
   );
 };

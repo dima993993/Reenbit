@@ -7,4 +7,5 @@ export interface Iusers {
  interface Imessage {
     date: string,
     message: string,
+    idUser: number,
  }

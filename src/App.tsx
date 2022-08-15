@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Aside } from "./components/Aside";
+import { Aside } from "./components/Aside/Aside";
 import { Route, Routes } from "react-router-dom";
-import { CurrentChat } from "./components/CurrentChat";
+import { MessagePage } from "./components/MessagePage/MessagePage";
 import { users } from "./data/data";
 
 const WrapperApp = styled.div`
@@ -21,12 +21,16 @@ const WrapperApp = styled.div`
 `;
 
 const App: React.FC = () => {
+  const [currentUser, setCurrentUser] = useState({});
+
   return (
     <WrapperApp>
-      <Aside users={users} />
+      <Aside users={users} setCurrentUser={setCurrentUser} />
       <div>
         <Routes>
-          <Route path="/chat/:id" element={<CurrentChat />}></Route>
+          <Route
+            path='/dialog/:id'
+            element={<MessagePage currentUser={currentUser} />}></Route>
         </Routes>
       </div>
     </WrapperApp>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "../common/Image";
 import { Search } from "../common/Search";
 import { Theme } from "../common/Theme";
 
@@ -29,13 +30,10 @@ export const HeaderAside: React.FC<{}> = () => {
   return (
     <HeaderAsideWrapper>
       <div>
-        <div>
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-            alt="User"
-          />
-          <span></span>
-        </div>
+        <Image
+          url={"https://cdn-icons-png.flaticon.com/512/149/149071.png"}
+          name='User'
+        />
         <Theme />
       </div>
       <div>

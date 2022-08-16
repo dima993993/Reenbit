@@ -3,6 +3,11 @@ import Image from "../common/Image";
 import { Search } from "../common/Search";
 import { Theme } from "../common/Theme";
 
+type HeaderAsideProps = {
+  setTextInput: React.Dispatch<React.SetStateAction<string>>;
+  textInput: string;
+};
+
 const HeaderAsideWrapper = styled.div`
   padding: 20px;
   background-color: var(--color-ui);
@@ -26,18 +31,19 @@ const HeaderAsideWrapper = styled.div`
   }
 `;
 
-export const HeaderAside: React.FC<{}> = () => {
+export const HeaderAside = ({ setTextInput, textInput }: HeaderAsideProps) => {
   return (
     <HeaderAsideWrapper>
       <div>
         <Image
           url={"https://cdn-icons-png.flaticon.com/512/149/149071.png"}
-          name='User'
+          name="User"
+          checked={true}
         />
         <Theme />
       </div>
       <div>
-        <Search />
+        <Search setTextInput={setTextInput} textInput={textInput} />
       </div>
     </HeaderAsideWrapper>
   );

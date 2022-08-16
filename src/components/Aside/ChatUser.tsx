@@ -16,10 +16,14 @@ const User = styled(NavLink)`
   align-items: center;
   text-decoration: none;
   color: var(--color-text);
+  transition: 0.3s;
   & > div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &:hover {
+    background-color: var(--color-ui);
   }
 `;
 
@@ -27,7 +31,7 @@ export const ChatUser = ({ user, setCurrentUser }: ChatUserProps) => {
   return (
     <User to={`dialog/${user.id}`} onClick={() => setCurrentUser(user)}>
       <div>
-        <Image name={user.name} url={user.url} />
+        <Image name={user.name} url={user.url} checked={true} />
         <div style={{ marginLeft: "10px" }}>
           <div>{user.name}</div>
           <div style={{ opacity: "0.5" }}>

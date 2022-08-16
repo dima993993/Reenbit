@@ -17,7 +17,7 @@ export const users: Iusers[] = [
         url: 'https://api.time.com/wp-content/uploads/2017/12/joey-degrandis-hsam-memory.jpg', 
         message: [
             {date: '01.10.2021', message: 'Hello, how are You?', idUser: 2}, 
-            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100}
+            {date: '01.10.2021', message: 'I am fine, and You? ', idUser: 100}
         ]
     },
     {
@@ -72,6 +72,32 @@ export const users: Iusers[] = [
         message: [
             {date: '01.10.2021', message: 'Hello, how are You?', idUser: 8}, 
             {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100}
+        ]
+    },
+    {
+        id: 9, 
+        name: 'Ashly', 
+        url: 'https://thumbs.dreamstime.com/b/closeup-photo-funny-excited-lady-raise-fists-screaming-loudly-celebrating-money-lottery-winning-wealthy-rich-person-wear-casual-172563278.jpg', 
+        message: [
+            {date: '01.10.2021', message: 'Hello, how are You?', idUser: 9}, 
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100}
+        ]
+    },
+    {
+        id: 10, 
+        name: 'Max', 
+        url: 'https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_640.jpg', 
+        message: [
+            {date: '01.10.2021', message: 'Hello, how are You?', idUser: 10}, 
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
         ]
     },
     

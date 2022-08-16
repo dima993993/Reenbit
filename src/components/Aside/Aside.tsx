@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Chats } from "./Chats";
 import { HeaderAside } from "./HeaderAside";
 import { Iusers } from "../../types/types";
+import { useEffect, useState } from "react";
 
-type Props = {
+type AsideProps = {
   users: Iusers[];
   setCurrentUser: React.Dispatch<React.SetStateAction<{}>>;
 };
@@ -23,11 +24,16 @@ const WrapperAside = styled.div`
   }
 `;
 
-export const Aside = ({ users, setCurrentUser }: Props) => {
+export const Aside = ({ users, setCurrentUser }: AsideProps) => {
+  const [textInput, setTextInput] = useState("");
+  let filter = users.filter((user) => {
+    let nameUser = user.name.slice(0, textInput.length);
+    return nameUser.toLowerCase() === textInput.toLowerCase();
+  });
   return (
     <WrapperAside>
-      <HeaderAside />
-      <Chats users={users} setCurrentUser={setCurrentUser} />
+      <HeaderAside setTextInput={setTextInput} textInput={textInput} />
+      <Chats users={filter} setCurrentUser={setCurrentUser} />
     </WrapperAside>
   );
 };

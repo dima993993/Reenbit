@@ -7,10 +7,11 @@ type HeaderMessageProps = {
 };
 
 const WrapperHeaderMessage = styled.div`
-  border: 1px solid red;
   display: flex;
   align-items: center;
   padding: 20px;
+  background-color: var(--color-ui);
+  border-bottom: 1px solid var(--color-border);
   & > div:last-child {
     font-size: var(--fs-lg);
     font-weight: var(--fw-bold);
@@ -21,7 +22,7 @@ const WrapperHeaderMessage = styled.div`
 const HeaderMessage = ({ url, name }: HeaderMessageProps) => {
   return (
     <WrapperHeaderMessage>
-      <Image url={url} name={name} />
+      <Image url={url} name={name} checked={true} />
       <div>{name}</div>
     </WrapperHeaderMessage>
   );

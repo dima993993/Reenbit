@@ -21,7 +21,13 @@ const WrapperApp = styled.div`
 `;
 
 const App: React.FC = () => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState<any>({});
+
+  // useEffect(() => {
+  //   if (Object.keys(currentUser).length == 0) {
+  //     setCurrentUser(users[0]);
+  //   }
+  // }, [currentUser]);
 
   return (
     <WrapperApp>
@@ -29,8 +35,13 @@ const App: React.FC = () => {
       <div>
         <Routes>
           <Route
-            path='/dialog/:id'
-            element={<MessagePage currentUser={currentUser} />}></Route>
+            path="/"
+            element={<MessagePage currentUser={users[0]} />}
+          ></Route>
+          <Route
+            path="/dialog/:id"
+            element={<MessagePage currentUser={currentUser} />}
+          ></Route>
         </Routes>
       </div>
     </WrapperApp>

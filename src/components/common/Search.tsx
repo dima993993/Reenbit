@@ -2,6 +2,11 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
+type SearchProps = {
+  setTextInput: React.Dispatch<React.SetStateAction<string>>;
+  textInput: string;
+};
+
 const SearchWrapper = styled.div`
   width: 100%;
   text-align: center;
@@ -25,11 +30,11 @@ const Input = styled.input.attrs({
   color: var(--color-text);
 `;
 
-export const Search: React.FC<{}> = () => {
+export const Search = ({ setTextInput, textInput }: SearchProps) => {
   return (
     <SearchWrapper>
       <FontAwesomeIcon icon={faSearch} style={{ color: "var(--color-ui)" }} />
-      <Input />
+      <Input onChange={(e) => setTextInput(e.target.value)} value={textInput} />
     </SearchWrapper>
   );
 };

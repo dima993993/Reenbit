@@ -23,6 +23,12 @@ body[data-theme='dark'] {
   --color-bg: #2c3e50;
   --color-ui: #34495e;
   --color-border: #222d38;
+  --color-user-message: #ecf0f1;
+  --color-text-user-message: #2d3436;
+  --color-my-message: #34495e;
+  --color-text-my-message: #ecf0f1;
+  
+  
 
 }
 body[data-theme='light'] {
@@ -30,7 +36,10 @@ body[data-theme='light'] {
   --color-bg: #ecf0f1;
   --color-ui: #cccccc;
   --color-border: #999999;
-
+  --color-user-message: #2c3e50;
+  --color-text-user-message: #ecf0f1;
+  --color-my-message: #cccccc;
+  --color-text-my-message: #2d3436;
 }
 
 body {

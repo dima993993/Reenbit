@@ -5,6 +5,7 @@ import styled from "styled-components";
 interface ImageProps {
   url: string;
   name: string;
+  checked?: boolean;
 }
 
 const UserImage = styled.div`
@@ -36,14 +37,18 @@ const UserImage = styled.div`
   }
 `;
 
-const Image = ({ url, name }: ImageProps) => {
+const Image = ({ url, name, checked }: ImageProps) => {
   return (
     <UserImage>
       <div>
         <img src={url} alt={name} />
       </div>
       <div>
-        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#129712" }} />
+        {checked ? (
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#129712" }} />
+        ) : (
+          ""
+        )}
       </div>
     </UserImage>
   );

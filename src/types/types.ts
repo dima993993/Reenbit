@@ -4,7 +4,7 @@ export interface Iusers {
     url: string,
     message: Imessage[],
 }
- interface Imessage {
+ export interface Imessage {
     date: string,
     message: string,
     idUser: number,

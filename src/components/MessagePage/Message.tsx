@@ -10,8 +10,8 @@ type MessageProps = {
 };
 
 const MessageWrapper = styled.div`
-  padding: 20px 0;
   overflow: hidden;
+  margin-top: 10px;
   & > div {
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ const MessageWrapper = styled.div`
     border-radius: 20px;
   }
   .date {
-    margin: 10px 0 0 10px;
+    margin-top: 10px;
     font-size: 12px;
     opacity: 0.5;
   }
@@ -34,12 +34,19 @@ const UserMessage = styled.div`
     background-color: var(--color-user-message);
     color: var(--color-text-user-message);
   }
+  .date {
+    text-align: left;
+    margin-left: 10px;
+  }
 `;
 const MyMessage = styled.div`
   justify-content: end;
   .message {
     background-color: var(--color-my-message);
     color: var(--color-text-my-message);
+  }
+  .date {
+    text-align: right;
   }
 `;
 
@@ -52,15 +59,15 @@ const Message = ({ message, url, name, date, idUser }: MessageProps) => {
             <Image url={url} name={name} />
           </div>
           <div>
-            <div className="message">{message}</div>
-            <div className="date">{date}</div>
+            <div className='message'>{message}</div>
+            <div className='date'>{date}</div>
           </div>
         </UserMessage>
       ) : (
         <MyMessage>
           <div>
-            <div className="message">{message}</div>
-            <div className="date">{date}</div>
+            <div className='message'>{message}</div>
+            <div className='date'>{date}</div>
           </div>
         </MyMessage>
       )}

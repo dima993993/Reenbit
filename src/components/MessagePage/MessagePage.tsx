@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Iusers } from "../../types/types";
 import HeaderMessage from "./HeaderMessage";
@@ -9,33 +10,38 @@ type MessegePageProps = {
 };
 
 const WrapperMassage = styled.div`
-  position: relative;
-  min-height: 100%;
-  overflow-y: scroll;
+  max-height: 100%;
+
   .bodyMessage {
-    min-height: 100%;
+    height: 70vh;
+    overflow-y: scroll;
     width: 90%;
     margin: 0 auto;
-    @media (min-width: 2000px) {
-      width: 1200px;
-    }
+    padding: 25px;
   }
   & > div:last-child {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    position: sticky;
     width: 100%;
   }
 `;
 
 export const MessagePage = ({ currentUser }: MessegePageProps) => {
+  const [textMessage, setTextMessage] = useState("");
+  const [newMessageObj, setNewMessageObj] = useState<any>({});
+
+  useEffect(() => {
+    if (Object.keys(newMessageObj).length != 0) {
+      currentUser.message.push(newMessageObj);
+    }
+  }, [newMessageObj]);
+
   return (
     <WrapperMassage>
       <HeaderMessage url={currentUser.url} name={currentUser.name} />
-      <div className="bodyMessage">
-        {currentUser.message.map((el) => (
+      <div className='bodyMessage'>
+        {currentUser.message.map((el, index) => (
           <Message
-            key={el.idUser}
+            key={index}
             message={el.message}
             date={el.date}
             url={currentUser.url}
@@ -44,7 +50,11 @@ export const MessagePage = ({ currentUser }: MessegePageProps) => {
           />
         ))}
       </div>
-      <MessageField />
+      <MessageField
+        textMessage={textMessage}
+        setTextMessage={setTextMessage}
+        setNewMessageObj={setNewMessageObj}
+      />
     </WrapperMassage>
   );
 };

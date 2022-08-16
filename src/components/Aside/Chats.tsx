@@ -16,13 +16,18 @@ const WrapperChats = styled.div`
 `;
 
 export const Chats = ({ users, setCurrentUser }: ChatsProps) => {
+  console.log(users);
   return (
     <WrapperChats>
       <div>Chats</div>
       <div>
-        {users.map((el) => (
-          <ChatUser key={el.id} setCurrentUser={setCurrentUser} user={el} />
-        ))}
+        {users.length != 0 ? (
+          users.map((el) => (
+            <ChatUser key={el.id} setCurrentUser={setCurrentUser} user={el} />
+          ))
+        ) : (
+          <div style={{ margin: "20px" }}>No results</div>
+        )}
       </div>
     </WrapperChats>
   );

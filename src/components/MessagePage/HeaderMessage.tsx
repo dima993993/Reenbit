@@ -12,6 +12,7 @@ const WrapperHeaderMessage = styled.div`
   padding: 20px;
   background-color: var(--color-ui);
   border-bottom: 1px solid var(--color-border);
+  height: 15vh;
   & > div:last-child {
     font-size: var(--fs-lg);
     font-weight: var(--fw-bold);

@@ -26,14 +26,14 @@ const WrapperAside = styled.div`
 
 export const Aside = ({ users, setCurrentUser }: AsideProps) => {
   const [textInput, setTextInput] = useState("");
-  let filter = users.filter((user) => {
+  let filterUsers = users.filter((user) => {
     let nameUser = user.name.slice(0, textInput.length);
     return nameUser.toLowerCase() === textInput.toLowerCase();
   });
   return (
     <WrapperAside>
       <HeaderAside setTextInput={setTextInput} textInput={textInput} />
-      <Chats users={filter} setCurrentUser={setCurrentUser} />
+      <Chats users={filterUsers} setCurrentUser={setCurrentUser} />
     </WrapperAside>
   );
 };

@@ -7,8 +7,12 @@ export const users: Iusers[] = [
         name: 'Asya', 
         url: 'https://theoverwhelmedbrain.com/blog/Wordpress/wp-content/uploads/2019/03/fake-smile-300x.jpg', 
         message: [
+            {date: '01.10.2021', message: 'Hello, how are You? I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?I am fine, and You?', idUser: 1}, 
+            {date: '01.10.2021', message: 'I am fine, and You? I am fine, and You? I am fine, and You?', idUser: 100},
+            {date: '01.10.2021', message: 'Hello, how are You? I am fine, and You?', idUser: 1}, 
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
             {date: '01.10.2021', message: 'Hello, how are You?', idUser: 1}, 
-            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100}
+            {date: '01.10.2021', message: 'I am fine, and You?', idUser: 100},
         ]
     },
     {

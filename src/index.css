@@ -47,6 +47,10 @@ body {
   font-weight: var(--fw-light);
   color: var(--color-text);
   background-color: var(--color-bg);
-  
+  height: 100%;
 }
+html {
+  height: 100%;
+}
+
 

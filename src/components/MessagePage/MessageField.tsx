@@ -1,6 +1,7 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { messageAPI } from "../../api/api";
 
 type MessageFieldProps = {
   textMessage: string;
@@ -32,6 +33,7 @@ const WrapperField = styled.div`
   }
 `;
 const Field = styled.textarea.attrs({
+  type: "text",
   placeholder: "Type your message",
 })`
   width: 90%;
@@ -62,9 +64,7 @@ const MessageField = ({
   setNewMessageObj,
 }: MessageFieldProps) => {
   let date = new Date();
-  let userObj = {
-    idUser: 100,
-    message: textMessage,
+  let myObj = {
     date:
       date.getMonth() +
       "/" +
@@ -75,6 +75,8 @@ const MessageField = ({
       date.getHours() +
       ":" +
       date.getMinutes(),
+    message: textMessage,
+    idUser: 100,
   };
 
   return (
@@ -85,7 +87,7 @@ const MessageField = ({
             onChange={(e) => setTextMessage(e.target.value)}
             onKeyDown={(e) => {
               if (e.keyCode === 13 && textMessage != "") {
-                setNewMessageObj(userObj);
+                setNewMessageObj(myObj);
                 setTextMessage("");
               }
             }}
@@ -99,10 +101,9 @@ const MessageField = ({
               cursor: "pointer",
             }}
             onClick={() => {
-              if (textMessage != "") {
-                setNewMessageObj(userObj);
-                setTextMessage("");
-              }
+              // setNewMessageObj(myObj);
+              // setTextMessage("");
+              messageAPI();
             }}
           />
         </div>

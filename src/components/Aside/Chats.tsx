@@ -16,7 +16,6 @@ const WrapperChats = styled.div`
 `;
 
 export const Chats = ({ users, setCurrentUser }: ChatsProps) => {
-  console.log(users);
   return (
     <WrapperChats>
       <div>Chats</div>

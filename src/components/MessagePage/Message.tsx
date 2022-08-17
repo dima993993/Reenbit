@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import styled from "styled-components";
+import { Iusers } from "../../types/types";
 import Image from "../common/Image";
 
 type MessageProps = {
@@ -59,15 +61,15 @@ const Message = ({ message, url, name, date, idUser }: MessageProps) => {
             <Image url={url} name={name} />
           </div>
           <div>
-            <div className='message'>{message}</div>
-            <div className='date'>{date}</div>
+            <div className="message">{message}</div>
+            <div className="date">{date}</div>
           </div>
         </UserMessage>
       ) : (
         <MyMessage>
           <div>
-            <div className='message'>{message}</div>
-            <div className='date'>{date}</div>
+            <div className="message">{message}</div>
+            <div className="date">{date}</div>
           </div>
         </MyMessage>
       )}

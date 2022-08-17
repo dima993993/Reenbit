@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { messageAPI } from "../../api/api";
 import { Iusers } from "../../types/types";
 import HeaderMessage from "./HeaderMessage";
 import Message from "./Message";
@@ -30,15 +31,25 @@ export const MessagePage = ({ currentUser }: MessegePageProps) => {
   const [newMessageObj, setNewMessageObj] = useState<any>({});
 
   useEffect(() => {
-    if (Object.keys(newMessageObj).length != 0) {
+    if (Object.keys(newMessageObj).length !== 0) {
       currentUser.message.push(newMessageObj);
+      messageAPI((data) => {
+        let newObj = {
+          date: data.created_at,
+          message: data.value,
+          id: currentUser.id,
+        };
+        setTimeout(() => {
+          setNewMessageObj(newObj);
+        }, 5000);
+      });
     }
   }, [newMessageObj]);
 
   return (
     <WrapperMassage>
       <HeaderMessage url={currentUser.url} name={currentUser.name} />
-      <div className='bodyMessage'>
+      <div className="bodyMessage">
         {currentUser.message.map((el, index) => (
           <Message
             key={index}
